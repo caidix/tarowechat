@@ -1,0 +1,54 @@
+/* components/epsoide/epsoide-cmp.wxss */
+.date-epsoide{
+  font-size:30px;
+  /* line-height:20px;  */
+  font-weight:800;
+  display: flex;
+  margin: 15px 7px 15px 0;
+}
+
+.vertical-line{
+  margin-right:7px;
+  height:44px;
+  border-left:1px solid black;
+}
+
+.plain{
+  font-size:32px;
+}
+
+.container{
+  display:inline-flex;
+  flex-direction: row;
+  line-height: 60px;
+  /* justify-content: flex-end; */
+   /* align-items: baseline;       */
+}
+
+.index-container{
+  display:flex;
+  flex-direction: row;
+  align-items: baseline;      
+}
+
+.date{
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  /* align-items: baseline; */
+   /* line-height:30px;   */
+}
+
+.month{
+  font-size:24px;
+  line-height:24px; 
+  padding-bottom: 2px; 
+  margin-right:2rpx;
+  /* padding-right:4rpx; */
+}
+
+.year{
+  font-size:20px;
+  line-height:20px; 
+  padding-bottom:3px;   
+}

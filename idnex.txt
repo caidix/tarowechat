@@ -1,0 +1,14 @@
+Taro.getSystemInfo({
+  success: (res) => {
+    this.setState({
+      scrollHeight: res.windowHeight
+    });
+  }
+});
+// 获取机型 信息。
+
+ Taro.setNavigationBarTitle({
+    title: res.parentCategory.name
+  })
+// 设置标题
+

@@ -1,0 +1,44 @@
+.classic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  .images {
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+    position: relative;
+    .create-time{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+  .content{
+    font-size: 32px;
+  }
+  .pagination{
+    width:600rpx;
+    height:80rpx;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 10px;
+    background-color: #f7f7f7;
+    border-radius: 40px;
+    display: flex;
+    position: fixed;
+    bottom: 50px;
+    justify-content: space-between;
+    .pagination-text{
+      width: 80%;
+      text-align: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 32px;
+    }
+    .icon{
+      height:80rpx;
+      width:80rpx;
+    }
+  }
+}
