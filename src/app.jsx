@@ -22,6 +22,7 @@ class App extends Component {
       'pages/index/index',
       'pages/user/index/index'
     ],
+    requiredBackgroundModes: ["audio", "location"],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fffbf0',
