@@ -1,0 +1,40 @@
+@import "~taro-ui/dist/style/components/icon.scss";
+.banner-panel{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .music {
+    width: 422rpx;
+    height: 422rpx;
+    margin-top: 60rpx;
+    /* margin-bottom: 120rpx; */
+    border-radius: 70%;
+    /* margin-bottom: -50px; */
+    overflow: hidden;
+  }
+}
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+.rotation {
+  -webkit-transform: rotate(360deg);
+  animation: rotation 12s linear infinite;
+  -moz-animation: rotation 12s linear infinite;
+  -webkit-animation: rotation 12s linear infinite;
+  -o-animation: rotation 12s linear infinite;
+}
+.music-icon{
+  width: 120rpx;
+  height: 120rpx;
+   position: relative; 
+   bottom: 271rpx; 
+   
+}

@@ -1,25 +1,23 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Button, Text, Block, Image } from '@tarojs/components'
+
+import Music from '../../components/classic/music/music'
 import Epsoide from '../../components/epsoide/epsoide'
 import { getClassicList } from '../../services/classic'
+
 import './index.scss'
 
 class Index extends Component {
   state = {
     list: [],
     total: 0,
-    activeIndex: 2
+    activeIndex: 0
   }
   config = {
     navigationBarTitleText: '首页'
   }
 
   componentDidMount() {
-    Taro.getSystemInfo({
-      success: (res) => {
-        console.log(res)
-      }
-    });
     getClassicList().then(data => {
       console.log(data)
       this.setState({
@@ -31,7 +29,6 @@ class Index extends Component {
   nextInner() {
     const { total, activeIndex } = this.state
     if (total > 0 && total - 1 > activeIndex) {
-      console.log(this.state)
       this.setState({
         activeIndex: activeIndex + 1
       })
@@ -40,7 +37,6 @@ class Index extends Component {
   prevInner() {
     const { total, activeIndex } = this.state
     if (total > 0 && activeIndex > 0) {
-      console.log(this.state)
       this.setState({
         activeIndex: activeIndex - 1
       })
@@ -55,9 +51,13 @@ class Index extends Component {
       <Block>
         <Epsoide index={activeIndex} />
         <View className="classic">
-          <Image className="images" src={item.background}>
-            <Text className="create-time at-article__info">createBy:{item.createTime}</Text>
-          </Image>
+          {
+            item.isMusic ?
+              <Music value={item} /> :
+              <Image className="images" src={item.background}>
+                <Text className="create-time at-article__info">createBy:{item.createTime}</Text>
+              </Image>
+          }
           <View className="content">
             <Text>{item.message}</Text>
           </View>

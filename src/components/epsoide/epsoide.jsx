@@ -9,7 +9,7 @@ const months = [
 export default class Epsoide extends Component {
 
   state = {
-    month:  '一月',
+    month: '一月',
     year: 2020
   }
 
@@ -23,24 +23,21 @@ export default class Epsoide extends Component {
       year: year
     })
   }
-  componentWillReceiveProps(nextProps, nextConText) { }
-  componentWillUnmount() { }
-  componentDidShow() { }
-  componentDidHide() { }
-  componentDidCatchError() { }
-  componentDidNotFound() { }
   render() {
     return (
-      <View className="date-epsoide">
-        <View class="index-container">
-          <Text class="plain">No.</Text>
-          <Text class="index">{this.props.index + 1}</Text>
-          <View class="vertical-line"></View>
+      <View className="header">
+        <View className="date-epsoide">
+          <View class="index-container">
+            <Text class="plain">No.</Text>
+            <Text class="index">{this.props.index + 1}</Text>
+            <View class="vertical-line"></View>
+          </View>
+          <View class="date">
+            <Text class="month">{month}</Text>
+            <Text class="year">{year}</Text>
+          </View>
         </View>
-        <View class="date">
-          <Text class="month">{month}</Text>
-          <Text class="year">{year}</Text>
-        </View>
+        <View className="share"></View>
       </View>
     );
   }

@@ -1,4 +1,10 @@
-/* components/epsoide/epsoide-cmp.wxss */
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #f2ecde;
+  border-width: 1px 0;
+}
 .date-epsoide{
   font-size:30px;
   /* line-height:20px;  */
@@ -21,8 +27,6 @@
   display:inline-flex;
   flex-direction: row;
   line-height: 60px;
-  /* justify-content: flex-end; */
-   /* align-items: baseline;       */
 }
 
 .index-container{
