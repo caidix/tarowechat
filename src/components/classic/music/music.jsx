@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro';
-import { View, Text, Button } from '@tarojs/components';
+import { View, Text, Button, Block } from '@tarojs/components';
 const playIcon = require('../../../static/img/play.png')
 const stopIcon = require('../../../static/img/stop.png')
 const backgroundAudioManager = Taro.getBackgroundAudioManager();
@@ -10,20 +10,21 @@ export default class Music extends Component {
     src: '',
     title: ''
   }
-  componentDidMount() {
+  componentWillMount() {
     this.registerMusic();
-    this.recoverPlaying();
   }
   registerMusic() {
     const { value } = this.props;
-    if (value.music) {
+    if (value && value.music) {
       const music = JSON.parse(value.music).data;
       this.setState({
         src: music.url,
         title: music.originalname
       })
+      console.log(music.url)
+      this.managerAudio();
+      this.recoverPlaying();
     }
-    this.managerAudio();
   }
   recoverPlaying() {
     if (backgroundAudioManager.paused) {
@@ -85,14 +86,22 @@ export default class Music extends Component {
     }
     return (
       <View className="banner-panel">
+        {value.isMusic ?
+          <Block>
+            <Image className={classname} src={value.background}>
+            </Image>
+            <Image
+              onClick={() => this.playMusic()}
+              className="music-icon"
+              src={playing ? stopIcon : playIcon}>
+            </Image>
+          </Block> :
+          <Image className="images" src={value.background}>
+            <Text className="create-time">{value.createTime}</Text>
+          </Image>
 
-        <Image className={classname} src={value.background}>
-        </Image>
-        <Image
-          onClick={() => this.playMusic()}
-          className="music-icon"
-          src={playing ? stopIcon : playIcon}>
-        </Image>
+        }
+
       </View>
     );
   }

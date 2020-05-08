@@ -47,17 +47,11 @@ class Index extends Component {
     const { total, list, activeIndex } = this.state
     const item = list[activeIndex]
     console.log(item)
-    return (
+    return (item ?
       <Block>
         <Epsoide index={activeIndex} />
+        <Music style='width:100%' value={item} />
         <View className="classic">
-          {
-            item.isMusic ?
-              <Music value={item} /> :
-              <Image className="images" src={item.background}>
-                <Text className="create-time at-article__info">createBy:{item.createTime}</Text>
-              </Image>
-          }
           <View className="content">
             <Text>{item.message}</Text>
           </View>
@@ -81,7 +75,8 @@ class Index extends Component {
             </Image>
           </View>
         </View>
-      </Block>
+      </Block> :
+      <View></View>
     )
   }
 }
